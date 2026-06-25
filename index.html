@@ -68,7 +68,7 @@
   #hero {
     min-height: 100vh; position: relative; overflow: hidden;
     display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 0 3.5rem 5rem;
+    padding: 0 3.5rem 5rem; scroll-margin-top: 72px;
   }
   .hero-bg {
     position: absolute; inset: 0;
@@ -115,7 +115,7 @@
   .btn-outline:hover { border-color: var(--acc2); color: var(--acc2); }
 
   /* ── SECTION BASICS ── */
-  section { padding: 7rem 3.5rem; }
+  section { padding: 7rem 3.5rem; scroll-margin-top: 72px; }
   .sec-label {
     font-family: 'Outfit', sans-serif; font-weight: 200;
     font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
@@ -979,13 +979,8 @@ function playVideo(el, id) {
   function scrollToSection(href) {
     const target = document.querySelector(href);
     if (!target) return;
-    const navH = document.querySelector('nav').offsetHeight;
-    // Usa offsetTop per non essere influenzato da overflow:hidden o transform
-    let top = 0;
-    let el = target;
-    while (el) { top += el.offsetTop; el = el.offsetParent; }
-    top = top - navH - 8;
-    window.scrollTo({ top: top, behavior: 'smooth' });
+    // scrollIntoView rispetta scroll-margin-top definito nel CSS
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function openMenu() {
