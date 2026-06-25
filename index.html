@@ -1005,25 +1005,26 @@ function playVideo(el, id) {
     if (e.key === 'Escape') closeMenu();
   });
 
-  // Chiudi menu, aspetta che overflow sia rimosso, poi scrolla
   navLinks.querySelectorAll('a').forEach(function(link) {
     link.addEventListener('click', function(e) {
       var href = link.getAttribute('href');
-      if (!href || !href.startsWith('#')) return;
+      if (!href || href.charAt(0) !== '#') return;
       e.preventDefault();
 
-      // 1. chiudi menu (rimuove overflow:hidden)
+      var target = document.querySelector(href);
+      if (!target) return;
+
+      // Chiudi il menu e rimuovi il blocco scroll
       closeMenu();
 
-      // 2. aspetta 1 frame che il browser aggiorni il layout
-      requestAnimationFrame(function() {
-        requestAnimationFrame(function() {
-          var target = document.querySelector(href);
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        });
-      });
+      // Aspetta che il reflow finisca, poi scrolla manualmente
+      setTimeout(function() {
+        var navH = document.querySelector('nav').offsetHeight || 65;
+        var rect = target.getBoundingClientRect();
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var targetY = rect.top + scrollTop - navH - 10;
+        window.scrollTo({ top: targetY, left: 0, behavior: "smooth" });
+      }, 100);
     });
   });
 
