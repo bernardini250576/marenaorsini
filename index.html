@@ -29,7 +29,7 @@
     --faint:  rgba(253,246,240,0.38); /* era 0.18 — più visibile */
   }
 
-  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  html { scroll-padding-top: 80px; }
   #hero, #bio, #generi, #gallery, #video, #background, #collaborazioni, #formazione, #contatti {
     scroll-margin-top: 72px;
   }
@@ -1009,22 +1009,12 @@ function playVideo(el, id) {
     link.addEventListener('click', function(e) {
       var href = link.getAttribute('href');
       if (!href || href.charAt(0) !== '#') return;
-      e.preventDefault();
 
-      var target = document.querySelector(href);
-      if (!target) return;
-
-      // Chiudi il menu e rimuovi il blocco scroll
+      // NON usare preventDefault — lascia che il browser salti all'ancora
+      // Chiudi solo il menu, lo scroll lo fa il browser tramite l'hash
       closeMenu();
-
-      // Aspetta che il reflow finisca, poi scrolla manualmente
-      setTimeout(function() {
-        var navH = document.querySelector('nav').offsetHeight || 65;
-        var rect = target.getBoundingClientRect();
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        var targetY = rect.top + scrollTop - navH - 10;
-        window.scrollTo({ top: targetY, left: 0, behavior: "smooth" });
-      }, 100);
+      // Il browser gestisce il salto all'ancora nativamente grazie a
+      // scroll-margin-top nel CSS. Nessun JS di scroll necessario.
     });
   });
 
