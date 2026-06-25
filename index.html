@@ -29,7 +29,7 @@
     --faint:  rgba(253,246,240,0.38); /* era 0.18 — più visibile */
   }
 
-  html { scroll-padding-top: 80px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; overflow-x: hidden; width: 100%; }
   #hero, #bio, #generi, #gallery, #video, #background, #collaborazioni, #formazione, #contatti {
     scroll-margin-top: 72px;
   }
@@ -40,8 +40,8 @@
     font-family: 'Outfit', sans-serif;
     font-weight: 300;
     line-height: 1.75;
-    overflow-x: hidden;
-    color: var(--white);
+    width: 100%;
+    position: relative;
   }
 
   /* ── NAV ── */
