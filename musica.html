@@ -532,7 +532,7 @@
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
 
-<title>Marena – Home</title>
+<title>Marena – Musica</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300;1,9..144,700&family=Outfit:wght@200;300;400&display=swap&display=swap');
 
@@ -1038,16 +1038,16 @@
   .page-hero-spacer { height: 0; }
 </style>
 </head>
-<body>
+<body class="page">
 <nav>
   <a href="index.html" class="nav-name" style="text-decoration:none;">Marena</a>
   <button class="burger" id="burger" aria-label="Apri menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="index.html" style="color:var(--acc2);opacity:1;">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="bio.html">Bio</a></li>
-    <li><a href="musica.html">Musica</a></li>
+    <li><a href="musica.html" style="color:var(--acc2);opacity:1;">Musica</a></li>
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="video.html">Video</a></li>
     <li><a href="background.html">Background</a></li>
@@ -1057,23 +1057,23 @@
 </nav>
 <div class="nav-overlay" id="nav-overlay"></div>
 <main id="main-content">
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content reveal">
-    <p class="hero-eyebrow">Marena · Cantante &amp; Pianista</p>
-    <h1 class="hero-name">
-      <span>Maria</span>
-      <span>Elena</span>
-      <span>Orsini</span>
-    </h1>
-    <p class="hero-genres">
-      Blues · Jazz · Soul<br>
-      Musica Brasiliana · Afrobeat · Elettronica
-    </p>
-    <div class="hero-btns">
-      <a href="bio.html" class="btn btn-primary">Scopri Marena</a>
-      <a href="contatti.html" class="btn btn-outline">Contattami</a>
+<section id="generi">
+  <div class="generi-wrap">
+    <div class="reveal">
+      <span class="sec-label">Musica</span>
+      <h2 class="sec-title-big">Generi &amp;<br>Contamina<br>zioni</h2>
+      <ul class="generi-list">
+        <li><span class="g-num">01</span><div><div class="g-name">Blues &amp; Jazz</div><div class="g-desc">Anni '30, Blues Rock '70, Jazz Standard e Contemporaneo</div></div></li>
+        <li><span class="g-num">02</span><div><div class="g-name">Musica Brasiliana</div><div class="g-desc">Choro, Samba, MPB, Bossanova, Samba Jazz · Pandeiro e Tamborim</div></div></li>
+        <li><span class="g-num">03</span><div><div class="g-name">Afrobeat</div><div class="g-desc">Sonorità dal Jazz e dal Funk dell'Africa occidentale</div></div></li>
+        <li><span class="g-num">04</span><div><div class="g-name">Elettronica</div><div class="g-desc">Effettistica voce, Pedaliere e Loop Station</div></div></li>
+        <li><span class="g-num">05</span><div><div class="g-name">Soul &amp; R&amp;B</div><div class="g-desc">Hip Hop, Trap, Nu-soul, R&amp;B, Soul contemporaneo</div></div></li>
+        <li><span class="g-num">06</span><div><div class="g-name">World Music</div><div class="g-desc">Musica Napoletana e sonorità da tutto il mondo</div></div></li>
+      </ul>
+    </div>
+    <div class="generi-photo reveal">
+      <img loading="lazy" src="img/29cfa87ae68d.jpg" alt="Marena live">
+      <span class="generi-photo-label">Live performance</span>
     </div>
   </div>
 </section>

@@ -532,7 +532,7 @@
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
 
-<title>Marena – Home</title>
+<title>Marena – Contatti</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300;1,9..144,700&family=Outfit:wght@200;300;400&display=swap&display=swap');
 
@@ -1038,43 +1038,45 @@
   .page-hero-spacer { height: 0; }
 </style>
 </head>
-<body>
+<body class="page">
 <nav>
   <a href="index.html" class="nav-name" style="text-decoration:none;">Marena</a>
   <button class="burger" id="burger" aria-label="Apri menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="index.html" style="color:var(--acc2);opacity:1;">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="bio.html">Bio</a></li>
     <li><a href="musica.html">Musica</a></li>
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="video.html">Video</a></li>
     <li><a href="background.html">Background</a></li>
     <li><a href="collaborazioni.html">Collaborazioni</a></li>
-    <li><a href="contatti.html">Contatti</a></li>
+    <li><a href="contatti.html" style="color:var(--acc2);opacity:1;">Contatti</a></li>
   </ul>
 </nav>
 <div class="nav-overlay" id="nav-overlay"></div>
 <main id="main-content">
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content reveal">
-    <p class="hero-eyebrow">Marena · Cantante &amp; Pianista</p>
-    <h1 class="hero-name">
-      <span>Maria</span>
-      <span>Elena</span>
-      <span>Orsini</span>
-    </h1>
-    <p class="hero-genres">
-      Blues · Jazz · Soul<br>
-      Musica Brasiliana · Afrobeat · Elettronica
-    </p>
-    <div class="hero-btns">
-      <a href="bio.html" class="btn btn-primary">Scopri Marena</a>
-      <a href="contatti.html" class="btn btn-outline">Contattami</a>
+<section id="contatti">
+  <div class="contatti-bg"></div>
+  <div class="contatti-overlay"></div>
+  <div class="contatti-content reveal">
+    <h2 class="contatti-title">Parliamo<br>di musica</h2>
+    <div class="contatti-links">
+      <a href="mailto:marena.orsini@gmail.com" class="c-link" aria-label="Invia email a Marena Orsini">
+        <span class="c-link-icon">Email</span>
+        marena.orsini@gmail.com
+      </a>
+      <a href="https://www.facebook.com/marenaorsini" target="_blank" rel="noopener noreferrer" class="c-link">
+        <span class="c-link-icon">Facebook</span>
+        facebook.com/marenaorsini
+      </a>
+      <a href="https://www.youtube.com/channel/UCLZ2zqi9SbGMaQ_M8ypeRSw" target="_blank" rel="noopener noreferrer" class="c-link">
+        <span class="c-link-icon">YouTube</span>
+        Marena Orsini · canale ufficiale
+      </a>
     </div>
+    <a href="mailto:marena.orsini@gmail.com" class="btn btn-primary">Scrivimi</a>
   </div>
 </section>
 

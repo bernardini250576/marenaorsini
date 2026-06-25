@@ -532,7 +532,7 @@
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
 
-<title>Marena – Home</title>
+<title>Marena – Video</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300;1,9..144,700&family=Outfit:wght@200;300;400&display=swap&display=swap');
 
@@ -1038,18 +1038,18 @@
   .page-hero-spacer { height: 0; }
 </style>
 </head>
-<body>
+<body class="page">
 <nav>
   <a href="index.html" class="nav-name" style="text-decoration:none;">Marena</a>
   <button class="burger" id="burger" aria-label="Apri menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="index.html" style="color:var(--acc2);opacity:1;">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="bio.html">Bio</a></li>
     <li><a href="musica.html">Musica</a></li>
     <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="video.html">Video</a></li>
+    <li><a href="video.html" style="color:var(--acc2);opacity:1;">Video</a></li>
     <li><a href="background.html">Background</a></li>
     <li><a href="collaborazioni.html">Collaborazioni</a></li>
     <li><a href="contatti.html">Contatti</a></li>
@@ -1057,23 +1057,52 @@
 </nav>
 <div class="nav-overlay" id="nav-overlay"></div>
 <main id="main-content">
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content reveal">
-    <p class="hero-eyebrow">Marena · Cantante &amp; Pianista</p>
-    <h1 class="hero-name">
-      <span>Maria</span>
-      <span>Elena</span>
-      <span>Orsini</span>
-    </h1>
-    <p class="hero-genres">
-      Blues · Jazz · Soul<br>
-      Musica Brasiliana · Afrobeat · Elettronica
-    </p>
-    <div class="hero-btns">
-      <a href="bio.html" class="btn btn-primary">Scopri Marena</a>
-      <a href="contatti.html" class="btn btn-outline">Contattami</a>
+<section id="video" style="background: var(--off);">
+  <div class="reveal">
+    <span class="sec-label">Live &amp; Performance</span>
+    <h2 class="sec-title-big">Video</h2>
+  </div>
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-bottom:2px;">
+    <div class="v-card">
+      <div class="v-thumb" onclick="playVideo(this,'L-9iuBX5P9Y')">
+        <img src="https://i.ytimg.com/vi/L-9iuBX5P9Y/hqdefault.jpg" alt="Live Performance" loading="lazy">
+        <div class="v-play"><svg viewBox="0 0 24 24" width="52" height="52"><circle cx="12" cy="12" r="12" fill="rgba(212,36,122,0.85)"/><polygon points="9,7 19,12 9,17" fill="#fff"/></svg></div>
+        <div class="v-iframe" id="iframe-L-9iuBX5P9Y" style="display:none;"></div>
+      </div>
+      <div class="v-meta">
+        <span class="v-year">Marena Orsini · Live</span>
+        <div class="v-title">Live Performance</div>
+      </div>
+    </div>
+    <div class="v-card">
+      <div class="v-thumb" onclick="playVideo(this,'ei3MeeRb-FQ')">
+        <img src="https://i.ytimg.com/vi/ei3MeeRb-FQ/hqdefault.jpg" alt="Concerto" loading="lazy">
+        <div class="v-play"><svg viewBox="0 0 24 24" width="52" height="52"><circle cx="12" cy="12" r="12" fill="rgba(212,36,122,0.85)"/><polygon points="9,7 19,12 9,17" fill="#fff"/></svg></div>
+        <div class="v-iframe" id="iframe-ei3MeeRb-FQ" style="display:none;"></div>
+      </div>
+      <div class="v-meta">
+        <span class="v-year">Marena Orsini · Live</span>
+        <div class="v-title">Concerto</div>
+      </div>
+    </div>
+    <div class="v-card">
+      <div class="v-thumb" onclick="playVideo(this,'15DPu3_WZQ8')">
+        <img src="https://i.ytimg.com/vi/15DPu3_WZQ8/hqdefault.jpg" alt="Performance dal vivo" loading="lazy">
+        <div class="v-play"><svg viewBox="0 0 24 24" width="52" height="52"><circle cx="12" cy="12" r="12" fill="rgba(212,36,122,0.85)"/><polygon points="9,7 19,12 9,17" fill="#fff"/></svg></div>
+        <div class="v-iframe" id="iframe-15DPu3_WZQ8" style="display:none;"></div>
+      </div>
+      <div class="v-meta">
+        <span class="v-year">Marena Orsini · Live</span>
+        <div class="v-title">Performance dal vivo</div>
+      </div>
+    </div>
+  </div>
+  <div class="reveal" style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;">
+    <div class="v-card" style="grid-column:1/2;"><!-- spacer --></div>
+    <div class="v-card" style="display:flex;flex-direction:column;justify-content:center;align-items:center;background:var(--surf);padding:2.5rem 1.5rem;text-align:center;gap:1rem;">
+      <svg viewBox="0 0 24 24" width="44" height="44"><path d="M10 15l5.19-3L10 9v6M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" fill="none" stroke="#f03fa0" stroke-width="1.5"/></svg>
+      <div style="font-family:'Outfit',sans-serif;font-weight:200;font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--acc2);">Guarda tutti i video</div>
+      <a href="https://www.youtube.com/@marenaorsini8622/videos" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="Apri canale YouTube di Marena Orsini" style="font-size:0.68rem;">YouTube ↗</a>
     </div>
   </div>
 </section>

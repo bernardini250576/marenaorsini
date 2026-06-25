@@ -532,7 +532,7 @@
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
 
-<title>Marena – Home</title>
+<title>Marena – Gallery</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300;1,9..144,700&family=Outfit:wght@200;300;400&display=swap&display=swap');
 
@@ -1038,17 +1038,17 @@
   .page-hero-spacer { height: 0; }
 </style>
 </head>
-<body>
+<body class="page">
 <nav>
   <a href="index.html" class="nav-name" style="text-decoration:none;">Marena</a>
   <button class="burger" id="burger" aria-label="Apri menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="index.html" style="color:var(--acc2);opacity:1;">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="bio.html">Bio</a></li>
     <li><a href="musica.html">Musica</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="gallery.html" style="color:var(--acc2);opacity:1;">Gallery</a></li>
     <li><a href="video.html">Video</a></li>
     <li><a href="background.html">Background</a></li>
     <li><a href="collaborazioni.html">Collaborazioni</a></li>
@@ -1057,23 +1057,85 @@
 </nav>
 <div class="nav-overlay" id="nav-overlay"></div>
 <main id="main-content">
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content reveal">
-    <p class="hero-eyebrow">Marena · Cantante &amp; Pianista</p>
-    <h1 class="hero-name">
-      <span>Maria</span>
-      <span>Elena</span>
-      <span>Orsini</span>
-    </h1>
-    <p class="hero-genres">
-      Blues · Jazz · Soul<br>
-      Musica Brasiliana · Afrobeat · Elettronica
-    </p>
-    <div class="hero-btns">
-      <a href="bio.html" class="btn btn-primary">Scopri Marena</a>
-      <a href="contatti.html" class="btn btn-outline">Contattami</a>
+<section id="gallery">
+  <div class="reveal">
+    <span class="sec-label">Live &amp; Immagini</span>
+    <h2 class="sec-title-big">Gallery</h2>
+  </div>
+  <div class="gallery-grid reveal">
+    <div class="g-card">
+      <img loading="lazy" src="img/15e9c2a8c9fa.jpg" alt="Marena live">
+      <div class="g-card-meta">
+        <span class="g-card-year">Roma</span>
+        <div class="g-card-title">Marena Orsini Project</div>
+        <p class="g-card-desc">Ritmiche e melodie brasiliane riarrangiate al festival Noites Riomanas.</p>
+      </div>
+    </div>
+    <div class="g-card">
+      <img loading="lazy" src="img/e0edd9a2a104.jpg" alt="Ritratto" style="filter:none">
+      <div class="g-card-meta">
+        <span class="g-card-year">New York</span>
+        <div class="g-card-title">Sob's &amp; Highline Festival</div>
+        <p class="g-card-desc">Ospite italiana al Sob's con Liliana Araujo, poi al festival Highline.</p>
+      </div>
+    </div>
+    <div class="g-card">
+      <img loading="lazy" src="img/29cfa87ae68d.jpg" alt="Marena portrait" style="aspect-ratio:4/3; object-fit:cover; object-position: top;">
+      <div class="g-card-meta">
+        <span class="g-card-year">Avezzano</span>
+        <div class="g-card-title">Note in Bianco e Nero</div>
+        <p class="g-card-desc">Al Castello Orsini con l'ospite d'eccezione Fabrizio Bosso.</p>
+      </div>
+    </div>
+    <div class="g-card">
+      <img loading="lazy" src="img/5a79189a2b15.jpg" alt="Marena live" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;">
+      <div class="g-card-meta">
+        <span class="g-card-year">Roma Samba Festival</span>
+        <div class="g-card-title">Sul palco</div>
+        <p class="g-card-desc">Numerose le partecipazioni ai festival romani tra cui il Roma Samba Festival.</p>
+      </div>
+    </div>
+  
+    <div class="g-card">
+      <img loading="lazy" src="img/c4762b957371.jpg" alt="Notas Libres · Capistrello 2025" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;display:block;">
+      <div class="g-card-meta">
+        <span class="g-card-year">29 Agosto 2025 · Capistrello</span>
+        <div class="g-card-title">Notas Libres</div>
+        <p class="g-card-desc">Piazza Risorgimento, ore 21.30. Con Juan Carlos Albelo Zamora e Natalio Mangalavite.</p>
+      </div>
+    </div>
+    <div class="g-card">
+      <img loading="lazy" src="img/60a04e319111.jpg" alt="Notas Libres · Castello Orsini 2026" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;display:block;">
+      <div class="g-card-meta">
+        <span class="g-card-year">8 Gennaio 2026 · Avezzano</span>
+        <div class="g-card-title">Castello Orsini</div>
+        <p class="g-card-desc">Concerto "Notas Libres" al Castello Orsini, ore 21.00. Ingresso offerta libera.</p>
+      </div>
+    </div>
+  
+    <div class="g-card">
+      <img src="img/c1aab9c3e404.jpg" alt="Note in Bianco e Nero · Fabrizio Bosso 2018" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;display:block;">
+      <div class="g-card-meta">
+        <span class="g-card-year">4 Gennaio 2018 · Castello Orsini</span>
+        <div class="g-card-title">Note in Bianco &amp; Nero</div>
+        <p class="g-card-desc">Con Fabrizio Bosso (tromba), Sadé Mangiaracina (piano), Alessandro Marzi (batteria).</p>
+      </div>
+    </div>
+    <div class="g-card">
+      <img src="img/c12acd7ee04b.jpg" alt="Note d'Insieme · Javier Girotto 2022" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;display:block;">
+      <div class="g-card-meta">
+        <span class="g-card-year">2 Luglio 2022 · Avezzano</span>
+        <div class="g-card-title">Note d'Insieme</div>
+        <p class="g-card-desc">L'Aia dei Musei. Con João Tavares Filho (piano) e Javier Girotto (sax &amp; fiati).</p>
+      </div>
+    </div>
+    <div class="g-card">
+      <img src="img/d3f47854f1c0.jpg" alt="Maria João Ogre Electric Trio · Sulmona 2018" style="width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;display:block;">
+      <div class="g-card-meta">
+        <span class="g-card-year">26 Ottobre 2018 · Sulmona</span>
+        <div class="g-card-title">Maria João — Ogre Electric Trio</div>
+        <p class="g-card-desc">Teatro Comunale M. Caniglia. Con la partecipazione di Marena Orsini.</p>
+      </div>
     </div>
   </div>
 </section>

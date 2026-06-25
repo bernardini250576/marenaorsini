@@ -532,7 +532,7 @@
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
 
-<title>Marena – Home</title>
+<title>Marena – Biografia</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300;1,9..144,700&family=Outfit:wght@200;300;400&display=swap&display=swap');
 
@@ -1038,15 +1038,15 @@
   .page-hero-spacer { height: 0; }
 </style>
 </head>
-<body>
+<body class="page">
 <nav>
   <a href="index.html" class="nav-name" style="text-decoration:none;">Marena</a>
   <button class="burger" id="burger" aria-label="Apri menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="index.html" style="color:var(--acc2);opacity:1;">Home</a></li>
-    <li><a href="bio.html">Bio</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="bio.html" style="color:var(--acc2);opacity:1;">Bio</a></li>
     <li><a href="musica.html">Musica</a></li>
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="video.html">Video</a></li>
@@ -1057,23 +1057,38 @@
 </nav>
 <div class="nav-overlay" id="nav-overlay"></div>
 <main id="main-content">
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content reveal">
-    <p class="hero-eyebrow">Marena · Cantante &amp; Pianista</p>
-    <h1 class="hero-name">
-      <span>Maria</span>
-      <span>Elena</span>
-      <span>Orsini</span>
-    </h1>
-    <p class="hero-genres">
-      Blues · Jazz · Soul<br>
-      Musica Brasiliana · Afrobeat · Elettronica
-    </p>
-    <div class="hero-btns">
-      <a href="bio.html" class="btn btn-primary">Scopri Marena</a>
-      <a href="contatti.html" class="btn btn-outline">Contattami</a>
+<section id="bio">
+  <div class="bio-wrap">
+    <div class="bio-photo reveal">
+      <img loading="lazy" src="img/cd1eebb3fd78.jpg" alt="Marena Orsini">
+    </div>
+    <div class="bio-vline"></div>
+    <div class="bio-right reveal">
+      <span class="bio-label">Biografia</span>
+      <h2 class="sec-title">Una voce,<br>mille mondi</h2>
+      <div class="bio-text">
+        <p>Maria Elena Orsini, in arte Marena, è cantante e pianista di jazz, musica latina, brasiliana, pop e blues. Nata a Pescina (L'Aquila) l'8 dicembre 1988, inizia lo studio del pianoforte classico a dieci anni al Conservatorio Alfredo Casella dell'Aquila.</p>
+        <p>Dopo il trasferimento a Roma, supera nel 2011 l'esame al Conservatorio Santa Cecilia, conseguendo la laurea in canto jazz nel 2014 e il diploma biennale nel 2016 — massimo dei voti. La passione per la musica brasiliana la porta in Portogallo, dove studia con la leggendaria Maria João, e a New York, dove si esibisce al Sob's e conosce il Blue Note.</p>
+        <p>Nel 2018 fonda l'Associazione Culturale <em>Menti Sonore</em> <img loading="lazy" src="img/2ea8c5c41b7b.png" alt="Menti Sonore" style="height:22px; vertical-align:middle; margin-left:4px; opacity:0.85; display:inline;"> ad Avezzano, portando la musica nei teatri e castelli del territorio.</p>
+      </div>
+      <div class="bio-stats">
+        <div class="stat-box">
+          <div class="stat-num">2018</div>
+          <div class="stat-lbl">Fondazione Menti Sonore</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">NYC</div>
+          <div class="stat-lbl">Sob's &amp; Highline</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">6+</div>
+          <div class="stat-lbl">Generi musicali</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">15+</div>
+          <div class="stat-lbl">Anni di palcoscenico</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
