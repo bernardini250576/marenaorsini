@@ -435,6 +435,78 @@
     transition: top 0.2s;
   }
   .skip-link:focus { top: 0.5rem; }
+
+  /* ── BURGER MENU ── */
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+    z-index: 200;
+  }
+  .burger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+  .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  @media (max-width: 768px) {
+    .burger { display: flex; }
+
+    .nav-links {
+      position: fixed;
+      top: 0; right: -100%;
+      width: 75vw;
+      max-width: 300px;
+      height: 100vh;
+      background: rgba(19,8,16,0.98);
+      backdrop-filter: blur(20px);
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 0;
+      padding: 5rem 2.5rem 2.5rem;
+      transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+      border-left: 1px solid var(--border);
+      z-index: 150;
+    }
+    .nav-links.open { right: 0; }
+
+    .nav-links li { width: 100%; }
+    .nav-links a {
+      font-size: 1rem !important;
+      letter-spacing: 0.14em !important;
+      padding: 1rem 0 !important;
+      border-bottom: 0.5px solid var(--border);
+      display: block !important;
+      min-height: auto;
+      color: var(--white) !important;
+      opacity: 0.85;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--acc2) !important; }
+    .nav-links li:last-child a { border-bottom: none; }
+
+    /* Overlay scuro dietro il menu */
+    .nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 140;
+    }
+    .nav-overlay.open { display: block; }
+  }
+
 </style>
 <meta property="og:title" content="Marena – Maria Elena Orsini">
 <meta property="og:description" content="Cantante e pianista di Blues, Jazz, Soul, Musica Brasiliana, Afrobeat ed Elettronica.">
@@ -462,7 +534,12 @@
 <a href="#main-content" class="skip-link">Vai al contenuto</a>
 <nav>
   <span class="nav-name">Marena</span>
-  <ul class="nav-links">
+  <button class="burger" id="burger" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="nav-links" id="nav-links" role="navigation">
     <li><a href="#bio">Bio</a></li>
     <li><a href="#generi">Musica</a></li>
     <li><a href="#gallery">Live</a></li>
@@ -472,6 +549,7 @@
     <li><a href="#contatti">Contatti</a></li>
   </ul>
 </nav>
+<div class="nav-overlay" id="nav-overlay"></div>
 
 <main id="main-content">
 <section id="hero">
@@ -889,6 +967,47 @@ function playVideo(el, id) {
   el.querySelector('.v-play').style.display = 'none';
   el.querySelector('img').style.display = 'none';
 }
+</script>
+
+
+<script>
+(function() {
+  const burger  = document.getElementById('burger');
+  const navLinks = document.getElementById('nav-links');
+  const overlay  = document.getElementById('nav-overlay');
+
+  function openMenu() {
+    burger.classList.add('open');
+    navLinks.classList.add('open');
+    overlay.classList.add('open');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    burger.classList.remove('open');
+    navLinks.classList.remove('open');
+    overlay.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  burger.addEventListener('click', function() {
+    navLinks.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  overlay.addEventListener('click', closeMenu);
+
+  // Chiudi cliccando su un link
+  navLinks.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Chiudi con ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+})();
 </script>
 
 </body>
