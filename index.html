@@ -972,9 +972,17 @@ function playVideo(el, id) {
 
 <script>
 (function() {
-  const burger  = document.getElementById('burger');
+  const burger   = document.getElementById('burger');
   const navLinks = document.getElementById('nav-links');
   const overlay  = document.getElementById('nav-overlay');
+
+  function scrollToSection(href) {
+    const target = document.querySelector(href);
+    if (!target) return;
+    const navH = document.querySelector('nav').offsetHeight;
+    const top  = target.getBoundingClientRect().top + window.scrollY - navH - 8;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  }
 
   function openMenu() {
     burger.classList.add('open');
@@ -992,58 +1000,42 @@ function playVideo(el, id) {
     document.body.style.overflow = '';
   }
 
+  // Burger toggle
   burger.addEventListener('click', function() {
     navLinks.classList.contains('open') ? closeMenu() : openMenu();
   });
 
+  // Overlay chiude menu
   overlay.addEventListener('click', closeMenu);
 
-  // Chiudi cliccando su un link e scrolla al punto giusto
-  navLinks.querySelectorAll('a').forEach(function(link) {
+  // ESC chiude menu
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  // Gestisci TUTTI i link interni della pagina (nav + hero buttons + altri)
+  document.querySelectorAll('a[href^="#"]').forEach(function(link) {
     link.addEventListener('click', function(e) {
       const href = link.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        e.preventDefault();
+      if (!href || href === '#') return;
+      e.preventDefault();
+
+      const isMobileMenuOpen = navLinks.classList.contains('open');
+
+      if (isMobileMenuOpen) {
+        // Su mobile: chiudi menu PRIMA poi scrolla
         closeMenu();
-        // Aspetta la fine dell'animazione del menu (350ms) poi scrolla
-        setTimeout(function() {
-          const target = document.querySelector(href);
-          if (target) {
-            const navH = document.querySelector('nav').offsetHeight;
-            const top = target.getBoundingClientRect().top + window.scrollY - navH - 8;
-            window.scrollTo({ top: top, behavior: 'smooth' });
-          }
-        }, 380);
+        setTimeout(function() { scrollToSection(href); }, 390);
       } else {
-        closeMenu();
+        // Desktop o menu chiuso: scrolla subito
+        scrollToSection(href);
       }
     });
   });
 
-  // Chiudi con ESC
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeMenu();
-  });
 })();
 </script>
 
 
-<script>
-// Scroll preciso per tutti i link interni (desktop)
-document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-  // Salta quelli già gestiti dal burger JS
-  if (link.closest('#nav-links')) return;
-  link.addEventListener('click', function(e) {
-    const href = link.getAttribute('href');
-    const target = document.querySelector(href);
-    if (target) {
-      e.preventDefault();
-      const navH = document.querySelector('nav').offsetHeight;
-      const top = target.getBoundingClientRect().top + window.scrollY - navH - 8;
-      window.scrollTo({ top: top, behavior: 'smooth' });
-    }
-  });
-});
-</script>
 </body>
 </html>
