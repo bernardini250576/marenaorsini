@@ -29,7 +29,7 @@
     --faint:  rgba(253,246,240,0.38); /* era 0.18 — più visibile */
   }
 
-  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 
   body {
     background: var(--black);
@@ -998,9 +998,26 @@ function playVideo(el, id) {
 
   overlay.addEventListener('click', closeMenu);
 
-  // Chiudi cliccando su un link
+  // Chiudi cliccando su un link e scrolla al punto giusto
   navLinks.querySelectorAll('a').forEach(function(link) {
-    link.addEventListener('click', closeMenu);
+    link.addEventListener('click', function(e) {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        closeMenu();
+        // Aspetta la fine dell'animazione del menu (350ms) poi scrolla
+        setTimeout(function() {
+          const target = document.querySelector(href);
+          if (target) {
+            const navH = document.querySelector('nav').offsetHeight;
+            const top = target.getBoundingClientRect().top + window.scrollY - navH - 8;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
+        }, 380);
+      } else {
+        closeMenu();
+      }
+    });
   });
 
   // Chiudi con ESC
@@ -1010,5 +1027,23 @@ function playVideo(el, id) {
 })();
 </script>
 
+
+<script>
+// Scroll preciso per tutti i link interni (desktop)
+document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+  // Salta quelli già gestiti dal burger JS
+  if (link.closest('#nav-links')) return;
+  link.addEventListener('click', function(e) {
+    const href = link.getAttribute('href');
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      const navH = document.querySelector('nav').offsetHeight;
+      const top = target.getBoundingClientRect().top + window.scrollY - navH - 8;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+  });
+});
+</script>
 </body>
 </html>
