@@ -47,7 +47,7 @@
 
   /* ── NAV ── */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
     display: flex; justify-content: space-between; align-items: center;
     padding: 1.2rem 3rem;
     background: rgba(10,2,8,0.9);
@@ -449,7 +449,7 @@
     padding: 4px;
     background: none;
     border: none;
-    z-index: 200;
+    z-index: 1001;
   }
   .burger span {
     display: block;
@@ -469,7 +469,7 @@
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.5);
-    z-index: 140;
+    z-index: 998;
   }
 
   @media (max-width: 1024px) {
@@ -491,9 +491,10 @@
       padding: 5rem 2.5rem 2.5rem !important;
       transition: right 0.35s cubic-bezier(0.4,0,0.2,1) !important;
       border-left: 1px solid var(--border) !important;
-      z-index: 150 !important;
+      z-index: 1001 !important;
     }
     .nav-links.open { right: 0 !important; }
+    .nav-links a { position: relative; z-index: 251; pointer-events: auto; }
 
     .nav-links li { width: 100%; }
     .nav-links a {
@@ -568,7 +569,7 @@
 
   /* ── NAV ── */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
     display: flex; justify-content: space-between; align-items: center;
     padding: 1.2rem 3rem;
     background: rgba(10,2,8,0.9);
@@ -970,7 +971,7 @@
     padding: 4px;
     background: none;
     border: none;
-    z-index: 200;
+    z-index: 1001;
   }
   .burger span {
     display: block;
@@ -990,7 +991,7 @@
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.5);
-    z-index: 140;
+    z-index: 998;
   }
 
   @media (max-width: 1024px) {
@@ -1012,9 +1013,10 @@
       padding: 5rem 2.5rem 2.5rem !important;
       transition: right 0.35s cubic-bezier(0.4,0,0.2,1) !important;
       border-left: 1px solid var(--border) !important;
-      z-index: 150 !important;
+      z-index: 1001 !important;
     }
     .nav-links.open { right: 0 !important; }
+    .nav-links a { position: relative; z-index: 251; pointer-events: auto; }
 
     .nav-links li { width: 100%; }
     .nav-links a {
