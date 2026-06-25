@@ -1005,10 +1005,25 @@ function playVideo(el, id) {
     if (e.key === 'Escape') closeMenu();
   });
 
-  // Chiudi menu quando si clicca un link — il browser gestisce lo scroll da solo
+  // Chiudi menu, aspetta che overflow sia rimosso, poi scrolla
   navLinks.querySelectorAll('a').forEach(function(link) {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function(e) {
+      var href = link.getAttribute('href');
+      if (!href || !href.startsWith('#')) return;
+      e.preventDefault();
+
+      // 1. chiudi menu (rimuove overflow:hidden)
       closeMenu();
+
+      // 2. aspetta 1 frame che il browser aggiorni il layout
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          var target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
     });
   });
 
