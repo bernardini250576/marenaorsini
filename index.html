@@ -29,7 +29,10 @@
     --faint:  rgba(253,246,240,0.38); /* era 0.18 — più visibile */
   }
 
-  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  #hero, #bio, #generi, #gallery, #video, #background, #collaborazioni, #formazione, #contatti {
+    scroll-margin-top: 72px;
+  }
 
   body {
     background: var(--black);
@@ -309,7 +312,7 @@
   }
 
   /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     nav { padding: 1rem 1.5rem; }
     section { padding: 4rem 1.5rem; }
     #hero, #contatti { padding-left: 1.5rem; padding-right: 1.5rem; }
@@ -338,7 +341,7 @@
 
 
   /* ── MOBILE ── */
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     nav { padding: 1rem 1.2rem; }
     .nav-links { gap: 1rem; }
     .nav-links a { font-size: 0.62rem; letter-spacing: 0.1em; }
@@ -468,7 +471,7 @@
     z-index: 140;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     .burger { display: flex; }
 
     .nav-links {
@@ -972,16 +975,9 @@ function playVideo(el, id) {
 
 <script>
 (function() {
-  const burger   = document.getElementById('burger');
-  const navLinks = document.getElementById('nav-links');
-  const overlay  = document.getElementById('nav-overlay');
-
-  function scrollToSection(href) {
-    const target = document.querySelector(href);
-    if (!target) return;
-    // scrollIntoView rispetta scroll-margin-top definito nel CSS
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
+  var burger   = document.getElementById('burger');
+  var navLinks = document.getElementById('nav-links');
+  var overlay  = document.getElementById('nav-overlay');
 
   function openMenu() {
     burger.classList.add('open');
@@ -999,36 +995,20 @@ function playVideo(el, id) {
     document.body.style.overflow = '';
   }
 
-  // Burger toggle
   burger.addEventListener('click', function() {
     navLinks.classList.contains('open') ? closeMenu() : openMenu();
   });
 
-  // Overlay chiude menu
   overlay.addEventListener('click', closeMenu);
 
-  // ESC chiude menu
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeMenu();
   });
 
-  // Gestisci TUTTI i link interni della pagina (nav + hero buttons + altri)
-  document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      const href = link.getAttribute('href');
-      if (!href || href === '#') return;
-      e.preventDefault();
-
-      const isMobileMenuOpen = navLinks.classList.contains('open');
-
-      if (isMobileMenuOpen) {
-        // Su mobile: chiudi menu PRIMA poi scrolla
-        closeMenu();
-        setTimeout(function() { scrollToSection(href); }, 390);
-      } else {
-        // Desktop o menu chiuso: scrolla subito
-        scrollToSection(href);
-      }
+  // Chiudi menu quando si clicca un link — il browser gestisce lo scroll da solo
+  navLinks.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      closeMenu();
     });
   });
 
