@@ -204,7 +204,7 @@
     font-family: 'Outfit', sans-serif; font-weight: 400;
     font-size: 1rem; color: var(--white); line-height: 1.3;
   }
-  .g-card { overflow: hidden; } .g-card .g-thumb { overflow: hidden; aspect-ratio: 4/3; } .g-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform 0.4s ease; } .g-card:hover img { transform: scale(1.04); }
+  .g-card { overflow: hidden; } .g-card .g-thumb { overflow: hidden; } .g-card img { width: 100%; height: auto; display: block; transition: transform 0.4s ease; } .g-card:hover img { transform: scale(1.04); }
   .g-card-desc { font-size: 0.82rem; color: var(--white); line-height: 1.6; margin-top: 0.6rem; opacity: 0.72; }
 
   /* ── BACKGROUND / TIMELINE ── */
@@ -317,10 +317,10 @@
   .footer-social { display: flex; align-items: center; gap: 0.4rem; }
   .footer-social a {
     color: var(--muted); display: inline-flex; align-items: center; justify-content: center;
-    width: 32px; height: 32px; transition: color 0.2s;
+    width: 48px; height: 48px; transition: color 0.2s;
   }
   .footer-social a:hover { color: var(--acc2); }
-  .footer-social svg { width: 17px; height: 17px; }
+  .footer-social svg { width: 34px; height: 34px; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 1024px) {
@@ -524,8 +524,8 @@
 
 
   /* Gallery foto: thumb uniforme */
-  .g-thumb { overflow: hidden; aspect-ratio: 4/3; border-radius: 4px; }
-  .g-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .g-thumb { overflow: hidden; border-radius: 4px; }
+  .g-thumb img { width: 100%; height: auto; display: block; transition: transform 0.4s ease; }
   .g-card:hover .g-thumb img { transform: scale(1.04); }
 
 </style>
@@ -740,7 +740,7 @@
     font-family: 'Outfit', sans-serif; font-weight: 400;
     font-size: 1rem; color: var(--white); line-height: 1.3;
   }
-  .g-card { overflow: hidden; } .g-card .g-thumb { overflow: hidden; aspect-ratio: 4/3; } .g-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform 0.4s ease; } .g-card:hover img { transform: scale(1.04); }
+  .g-card { overflow: hidden; } .g-card .g-thumb { overflow: hidden; } .g-card img { width: 100%; height: auto; display: block; transition: transform 0.4s ease; } .g-card:hover img { transform: scale(1.04); }
   .g-card-desc { font-size: 0.82rem; color: var(--white); line-height: 1.6; margin-top: 0.6rem; opacity: 0.72; }
 
   /* ── BACKGROUND / TIMELINE ── */
@@ -853,10 +853,10 @@
   .footer-social { display: flex; align-items: center; gap: 0.4rem; }
   .footer-social a {
     color: var(--muted); display: inline-flex; align-items: center; justify-content: center;
-    width: 32px; height: 32px; transition: color 0.2s;
+    width: 48px; height: 48px; transition: color 0.2s;
   }
   .footer-social a:hover { color: var(--acc2); }
-  .footer-social svg { width: 17px; height: 17px; }
+  .footer-social svg { width: 34px; height: 34px; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 1024px) {
@@ -1064,15 +1064,15 @@
   .page-hero-spacer { height: 0; }
 
   /* Gallery foto: thumb uniforme */
-  .g-thumb { overflow: hidden; aspect-ratio: 4/3; border-radius: 4px; }
-  .g-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .g-thumb { overflow: hidden; border-radius: 4px; }
+  .g-thumb img { width: 100%; height: auto; display: block; transition: transform 0.4s ease; }
   .g-card:hover .g-thumb img { transform: scale(1.04); }
 
 </style>
 </head>
 <body class="page">
 <nav>
-  <a href="index.html" class="nav-name" style="text-decoration:none;">Home</a>
+  <a href="index.html" class="nav-name" style="text-decoration:none;" aria-label="Marena Orsini - Home"></a>
   <button class="burger" id="burger" aria-label="Apri menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -1104,7 +1104,6 @@
       <div class="g-card-meta">
         <span class="g-card-year">Roma</span>
         <div class="g-card-title">Marena Orsini Project</div>
-        <p class="g-card-desc">Ritmiche e melodie brasiliane riarrangiate al festival Noites Riomanas.</p>
       </div>
     </div>
     <div class="g-card">
@@ -1112,7 +1111,6 @@
       <div class="g-card-meta">
         <span class="g-card-year">New York</span>
         <div class="g-card-title">Sob's &amp; Highline Festival</div>
-        <p class="g-card-desc">Ospite italiana al Sob's con Liliana Araujo, poi al festival Highline.</p>
       </div>
     </div>
     <div class="g-card">
@@ -1120,7 +1118,6 @@
       <div class="g-card-meta">
         <span class="g-card-year">Avezzano</span>
         <div class="g-card-title">Note in Bianco e Nero</div>
-        <p class="g-card-desc">Al Castello Orsini con l'ospite d'eccezione Fabrizio Bosso.</p>
       </div>
     </div>
     <div class="g-card">
@@ -1128,7 +1125,6 @@
       <div class="g-card-meta">
         <span class="g-card-year">Roma Samba Festival</span>
         <div class="g-card-title">Sul palco</div>
-        <p class="g-card-desc">Numerose le partecipazioni ai festival romani tra cui il Roma Samba Festival.</p>
       </div>
     </div>
   </div>
@@ -1139,7 +1135,6 @@
 
 </main>
 <footer>
-  <span class="footer-name">Marena</span>
   <div class="footer-social">
     <a href="https://www.instagram.com/mariaelenaorsini/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1"/></svg>
