@@ -57,17 +57,10 @@
   .nav-name {
     font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase;
     font-size: 3.5rem; line-height: 1; color: var(--white); letter-spacing: 0.02em;
-    -webkit-text-stroke: 1.5px #a3e635; text-stroke: 1.5px #a3e635;
+    -webkit-text-stroke: 1.5px var(--acc2); text-stroke: 1.5px var(--acc2);
     white-space: nowrap;
   }
   .nav-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1rem; }
-  .nav-social { display: flex; gap: 0.9rem; }
-  .nav-social a {
-    color: var(--muted); display: inline-flex; align-items: center; justify-content: center;
-    width: 30px; height: 30px; transition: color 0.2s;
-  }
-  .nav-social a:hover { color: var(--acc2); }
-  .nav-social svg { width: 19px; height: 19px; }
   .nav-links { display: flex; gap: 1.5rem; list-style: none; }
   .nav-links a {
     font-family: 'Outfit', sans-serif; font-weight: 700;
@@ -156,7 +149,23 @@
   /* ── BIO ── */
   #bio { background: var(--off); }
   .bio-wrap { display: grid; grid-template-columns: 1fr 2px 1.6fr; gap: 4rem; align-items: start; }
-  .bio-photo img { width: 100%; display: block; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(30%) contrast(1.05); }
+  .bio-photo { position: relative; }
+  .bio-carousel { position: relative; width: 100%; aspect-ratio: 2/3; overflow: hidden; }
+  .bio-slide {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: contain; background: var(--black); display: block; filter: grayscale(30%) contrast(1.05);
+    opacity: 0; transition: opacity 1s ease;
+  }
+  .bio-slide.active { opacity: 1; }
+  .bio-carousel-dots {
+    position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 0.6rem; z-index: 3;
+  }
+  .bio-dot {
+    width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0; cursor: pointer;
+    background: rgba(253,246,240,0.4); transition: background 0.2s, transform 0.2s;
+  }
+  .bio-dot.active { background: var(--acc2); transform: scale(1.3); }
   .bio-vline { background: var(--border); align-self: stretch; }
   .bio-label {
     font-family: 'Outfit', sans-serif; font-weight: 200;
@@ -387,7 +396,7 @@
     /* Bio */
     .bio-wrap { grid-template-columns: 1fr; gap: 2rem; }
     .bio-vline { display: none; }
-    .bio-photo img { max-width: 280px; margin: 0 auto; }
+    .bio-carousel { max-width: 280px; margin: 0 auto; }
     .bio-stats { grid-template-columns: 1fr 1fr; }
     .stat-num { font-size: 1.8rem; }
 
@@ -439,7 +448,6 @@
   }
 
   @media (max-width: 400px) {
-    .nav-social { display: none; }
   }
 
   /* ── TOUCH improvements ── */
@@ -498,7 +506,6 @@
     z-index: 998;
   }
 
-  @media (max-width: 1400px) {
     .burger { display: flex; }
 
     .nav-links {
@@ -536,7 +543,6 @@
     .nav-links a:hover { opacity: 1; color: var(--acc2) !important; }
     .nav-links li:last-child a { border-bottom: none !important; }
     .nav-overlay.open { display: block; }
-  }
 
 </style>
 <meta property="og:title" content="Marena – Maria Elena Orsini">
@@ -603,17 +609,10 @@
   .nav-name {
     font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase;
     font-size: 3.5rem; line-height: 1; color: var(--white); letter-spacing: 0.02em;
-    -webkit-text-stroke: 1.5px #a3e635; text-stroke: 1.5px #a3e635;
+    -webkit-text-stroke: 1.5px var(--acc2); text-stroke: 1.5px var(--acc2);
     white-space: nowrap;
   }
   .nav-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1rem; }
-  .nav-social { display: flex; gap: 0.9rem; }
-  .nav-social a {
-    color: var(--muted); display: inline-flex; align-items: center; justify-content: center;
-    width: 30px; height: 30px; transition: color 0.2s;
-  }
-  .nav-social a:hover { color: var(--acc2); }
-  .nav-social svg { width: 19px; height: 19px; }
   .nav-links { display: flex; gap: 1.5rem; list-style: none; }
   .nav-links a {
     font-family: 'Outfit', sans-serif; font-weight: 700;
@@ -702,7 +701,23 @@
   /* ── BIO ── */
   #bio { background: var(--off); }
   .bio-wrap { display: grid; grid-template-columns: 1fr 2px 1.6fr; gap: 4rem; align-items: start; }
-  .bio-photo img { width: 100%; display: block; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(30%) contrast(1.05); }
+  .bio-photo { position: relative; }
+  .bio-carousel { position: relative; width: 100%; aspect-ratio: 2/3; overflow: hidden; }
+  .bio-slide {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: contain; background: var(--black); display: block; filter: grayscale(30%) contrast(1.05);
+    opacity: 0; transition: opacity 1s ease;
+  }
+  .bio-slide.active { opacity: 1; }
+  .bio-carousel-dots {
+    position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 0.6rem; z-index: 3;
+  }
+  .bio-dot {
+    width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0; cursor: pointer;
+    background: rgba(253,246,240,0.4); transition: background 0.2s, transform 0.2s;
+  }
+  .bio-dot.active { background: var(--acc2); transform: scale(1.3); }
   .bio-vline { background: var(--border); align-self: stretch; }
   .bio-label {
     font-family: 'Outfit', sans-serif; font-weight: 200;
@@ -933,7 +948,7 @@
     /* Bio */
     .bio-wrap { grid-template-columns: 1fr; gap: 2rem; }
     .bio-vline { display: none; }
-    .bio-photo img { max-width: 280px; margin: 0 auto; }
+    .bio-carousel { max-width: 280px; margin: 0 auto; }
     .bio-stats { grid-template-columns: 1fr 1fr; }
     .stat-num { font-size: 1.8rem; }
 
@@ -985,7 +1000,6 @@
   }
 
   @media (max-width: 400px) {
-    .nav-social { display: none; }
   }
 
   /* ── TOUCH improvements ── */
@@ -1044,7 +1058,6 @@
     z-index: 998;
   }
 
-  @media (max-width: 1400px) {
     .burger { display: flex; }
 
     .nav-links {
@@ -1093,41 +1106,47 @@
 <body class="page">
 <nav>
   <a href="index.html" class="nav-name" style="text-decoration:none;" aria-label="Marena Orsini - Home">Maria Elena Orsini</a>
+  <div class="nav-right">
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="bio.html" style="color:var(--acc2);opacity:1;">Bio</a></li>
+      <li><a href="musica.html">Musica</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="video.html">Video</a></li>
+      <li><a href="background.html">Background</a></li>
+      <li><a href="collaborazioni.html">Collaborazioni</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+  </div>
   <button class="burger" id="burger" aria-label="Apri menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
-  <div class="nav-right">
-    <div class="nav-social">
-      <a href="https://www.instagram.com/mariaelenaorsini/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1"/></svg>
-      </a>
-      <a href="https://www.facebook.com/marenaorsini/?locale=it_IT" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 8.2h-1.6a1.7 1.7 0 0 0-1.7 1.7V12h3.1l-.4 3h-2.7v7h-3v-7H6.5v-3h2.2V9.6C8.7 7 10.4 5.4 13 5.4h2v2.8z"/></svg>
-      </a>
-      <a href="https://www.youtube.com/@marenaorsini8622" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="6" width="19" height="12" rx="3.5"/><path d="M10.3 9.6v4.8l4.2-2.4z" fill="currentColor" stroke="none"/></svg>
-      </a>
-      <a href="mailto:marena.orsini@gmail.com" aria-label="Email">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7.2l8 5.8 8-5.8"/></svg>
-      </a>
-    </div>  <ul class="nav-links" id="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="bio.html" style="color:var(--acc2);opacity:1;">Bio</a></li>
-    <li><a href="musica.html">Musica</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="video.html">Video</a></li>
-    <li><a href="background.html">Background</a></li>
-    <li><a href="collaborazioni.html">Collaborazioni</a></li>
-    <li><a href="contatti.html">Contatti</a></li>
-  </ul>
-  </div>
 </nav>
 <div class="nav-overlay" id="nav-overlay"></div>
 <main id="main-content">
 <section id="bio">
   <div class="bio-wrap">
     <div class="bio-photo reveal">
-      <img loading="lazy" src="img/marena-studio-bio.jpg" alt="Marena Orsini">
+      <div class="bio-carousel" id="bioCarousel">
+        <img class="bio-slide active" loading="lazy" src="img/carosello-bio-01.jpg" alt="Marena Orsini">
+        <img class="bio-slide" loading="lazy" src="img/carosello-bio-02.jpg" alt="Marena Orsini">
+        <img class="bio-slide" loading="lazy" src="img/carosello-01.jpg" alt="Marena Orsini">
+        <img class="bio-slide" loading="lazy" src="img/carosello-02.jpg" alt="Marena Orsini">
+        <img class="bio-slide" loading="lazy" src="img/carosello-03.jpg" alt="Marena Orsini">
+        <img class="bio-slide" loading="lazy" src="img/carosello-04.jpg" alt="Marena Orsini">
+        <img class="bio-slide" loading="lazy" src="img/carosello-05.jpg" alt="Marena Orsini">
+        <img class="bio-slide" loading="lazy" src="img/carosello-06.jpg" alt="Marena Orsini">
+      </div>
+      <div class="bio-carousel-dots">
+        <button class="bio-dot active" aria-label="Foto 1" data-i="0"></button>
+        <button class="bio-dot" aria-label="Foto 2" data-i="1"></button>
+        <button class="bio-dot" aria-label="Foto 3" data-i="2"></button>
+        <button class="bio-dot" aria-label="Foto 4" data-i="3"></button>
+        <button class="bio-dot" aria-label="Foto 5" data-i="4"></button>
+        <button class="bio-dot" aria-label="Foto 6" data-i="5"></button>
+        <button class="bio-dot" aria-label="Foto 7" data-i="6"></button>
+        <button class="bio-dot" aria-label="Foto 8" data-i="7"></button>
+      </div>
     </div>
     <div class="bio-vline"></div>
     <div class="bio-right reveal">
@@ -1260,6 +1279,29 @@ function playVideo(el, id) {
   el.querySelector('.v-play').style.display = 'none';
   var img = el.querySelector('img'); if(img) img.style.display = 'none';
 }
+</script>
+<script>
+(function() {
+  var slides = document.querySelectorAll('#bioCarousel .bio-slide');
+  var dots = document.querySelectorAll('.bio-carousel-dots .bio-dot');
+  if (!slides.length) return;
+  var idx = 0;
+  var timer;
+  function show(i) {
+    slides[idx].classList.remove('active');
+    dots[idx].classList.remove('active');
+    idx = (i + slides.length) % slides.length;
+    slides[idx].classList.add('active');
+    dots[idx].classList.add('active');
+  }
+  function next() { show(idx + 1); }
+  function start() { timer = setInterval(next, 4500); }
+  function reset() { clearInterval(timer); start(); }
+  dots.forEach(function(d, i) {
+    d.addEventListener('click', function() { show(i); reset(); });
+  });
+  start();
+})();
 </script>
 </body>
 </html>
