@@ -11,23 +11,23 @@
 <meta name="theme-color" content="#0a0208">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>Marena – Maria Elena Orsini</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300;1,9..144,700&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300;1,9..144,700&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300;1,9..144,700&family=Outfit:wght@200;300;400&display=swap&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300;1,9..144,700&family=Outfit:wght@200;300;400&display=swap&display=swap');
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --black:  #130810;       /* era #0a0208 — leggermente più chiaro */
-    --off:    #221428;       /* era #1a0d17 — più chiaro */
-    --surf:   #2e1a30;       /* era #220f1e — più chiaro */
-    --border: rgba(240,63,160,0.22);  /* era 0.12 — bordi più visibili */
-    --acc:    #e0307f;       /* leggermente più luminoso */
-    --acc2:   #ff55b0;       /* era #f03fa0 — più brillante */
-    --dim:    rgba(212,36,122,0.2);
-    --white:  #fdf6f0;       /* era #f0e8e0 — quasi bianco puro */
-    --muted:  rgba(253,246,240,0.72); /* era 0.5 — molto più leggibile */
-    --faint:  rgba(253,246,240,0.38); /* era 0.18 — più visibile */
+  --black:  #130810;       /* era #0a0208 -- leggermente piu chiaro */
+  --off:    #221428;       /* era #1a0d17 -- piu chiaro */
+  --surf:   #2e1a30;       /* era #220f1e -- piu chiaro */
+  --border: rgba(240,63,160,0.22);  /* era 0.12 -- bordi piu visibili */
+  --acc:    #e0307f;       /* leggermente piu luminoso */
+  --acc2:   #ff55b0;       /* era #f03fa0 -- piu brillante */
+  --dim:    rgba(212,36,122,0.2);
+  --white:  #fdf6f0;       /* era #f0e8e0 -- quasi bianco puro */
+  --muted:  rgba(253,246,240,0.72); /* era 0.5 -- molto piu leggibile */
+  --faint:  rgba(253,246,240,0.38); /* era 0.18 -- piu visibile */
   }
 
   html { scroll-behavior: smooth; scroll-padding-top: 80px; overflow-x: hidden; width: 100%; }
@@ -60,7 +60,7 @@
   }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a {
-    font-family: 'Outfit', sans-serif; font-weight: 300;
+    font-family: 'Outfit', sans-serif; font-weight: 700;
     color: var(--muted); text-decoration: none;
     font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase;
     transition: color 0.2s; padding: 0.4rem 0; min-height: 44px;
@@ -70,19 +70,19 @@
 
   /* ── HERO ── */
   #hero {
-    min-height: 100vh; position: relative; overflow: hidden;
-    display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 0 3.5rem 5rem; scroll-margin-top: 72px;
+    min-height: max(135vw, 100vh); position: relative; overflow: hidden;
+    display: flex; flex-direction: column; justify-content: flex-start;
+    padding: 8rem 3.5rem 0; scroll-margin-top: 72px;
   }
   .hero-bg {
     position: absolute; inset: 0;
-    background: url("img/29cfa87ae68d.jpg") center 20% / cover no-repeat;
+    background: url("img/marena-studio-hero.jpg") center center / contain no-repeat, var(--black);
     z-index: 0;
   }
   .hero-overlay {
     position: absolute; inset: 0;
     background: linear-gradient(105deg, rgba(19,8,16,0.48) 25%, rgba(19,8,16,0.0) 100%),
-                linear-gradient(to top, rgba(19,8,16,0.80) 0%, rgba(19,8,16,0.0) 48%);
+                linear-gradient(to bottom, rgba(19,8,16,0.80) 0%, rgba(19,8,16,0.0) 48%);
     z-index: 1;
   }
   .hero-content { position: relative; z-index: 2; max-width: 680px; }
@@ -91,11 +91,12 @@
     font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
     color: var(--acc2); margin-bottom: 1.2rem;
   }
-  .hero-name {
-    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
-    font-size: clamp(4.5rem, 10vw, 9rem);
-    line-height: 0.92; letter-spacing: -0.02em;
+    .hero-name {
+    font-family: 'Anton', sans-serif; font-style: normal; font-weight: 400;
+    font-size: clamp(6.5rem, 15vw, 14rem);
+    line-height: 1.15; letter-spacing: 0.01em; text-transform: uppercase;
     color: var(--white); margin-bottom: 1.4rem;
+    -webkit-text-stroke: 2.5px #a3e635; text-stroke: 2.5px #a3e635;
   }
   .hero-name span { display: block; }
   .hero-genres {
@@ -126,10 +127,10 @@
     font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
     color: var(--acc2); margin-bottom: 0.8rem; display: block;
   }
-  .sec-title-big {
-    font-family: 'Outfit', sans-serif; font-weight: 400;
-    font-size: clamp(3.5rem, 8vw, 7rem);
-    line-height: 0.9; letter-spacing: -0.02em;
+    .sec-title-big {
+    font-family: 'Anton', sans-serif; font-weight: 400;
+    font-size: clamp(3.2rem, 7vw, 6.5rem);
+    line-height: 0.92; letter-spacing: 0em;
     text-transform: uppercase; color: var(--white);
     margin-bottom: 3.5rem;
   }
@@ -312,6 +313,14 @@
     font-family: 'Outfit', sans-serif; font-weight: 200;
     font-size: 0.7rem; letter-spacing: 0.1em; color: var(--faint);
   }
+  .footer-right { display: flex; align-items: center; gap: 1.1rem; }
+  .footer-social { display: flex; align-items: center; gap: 0.4rem; }
+  .footer-social a {
+    color: var(--muted); display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; transition: color 0.2s;
+  }
+  .footer-social a:hover { color: var(--acc2); }
+  .footer-social svg { width: 17px; height: 17px; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 1024px) {
@@ -350,7 +359,7 @@
     .nav-name { font-size: 1rem; }
 
     section { padding: 3.5rem 1.2rem; }
-    #hero { padding: 0 1.2rem 3.5rem; min-height: 92vh; }
+    #hero { padding: 6rem 1.2rem 0; min-height: max(135vw, 100vh); }
     #contatti { padding: 0 1.2rem 3.5rem; min-height: 70vh; }
 
     .hero-name { font-size: clamp(3rem, 14vw, 5rem); }
@@ -534,21 +543,21 @@
 
 <title>Marena – Home</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300;1,9..144,700&family=Outfit:wght@200;300;400&display=swap&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300;1,9..144,700&family=Outfit:wght@200;300;400&display=swap&display=swap');
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --black:  #130810;       /* era #0a0208 — leggermente più chiaro */
-    --off:    #221428;       /* era #1a0d17 — più chiaro */
-    --surf:   #2e1a30;       /* era #220f1e — più chiaro */
-    --border: rgba(240,63,160,0.22);  /* era 0.12 — bordi più visibili */
-    --acc:    #e0307f;       /* leggermente più luminoso */
-    --acc2:   #ff55b0;       /* era #f03fa0 — più brillante */
-    --dim:    rgba(212,36,122,0.2);
-    --white:  #fdf6f0;       /* era #f0e8e0 — quasi bianco puro */
-    --muted:  rgba(253,246,240,0.72); /* era 0.5 — molto più leggibile */
-    --faint:  rgba(253,246,240,0.38); /* era 0.18 — più visibile */
+  --black:  #130810;       /* era #0a0208 -- leggermente piu chiaro */
+  --off:    #221428;       /* era #1a0d17 -- piu chiaro */
+  --surf:   #2e1a30;       /* era #220f1e -- piu chiaro */
+  --border: rgba(240,63,160,0.22);  /* era 0.12 -- bordi piu visibili */
+  --acc:    #e0307f;       /* leggermente piu luminoso */
+  --acc2:   #ff55b0;       /* era #f03fa0 -- piu brillante */
+  --dim:    rgba(212,36,122,0.2);
+  --white:  #fdf6f0;       /* era #f0e8e0 -- quasi bianco puro */
+  --muted:  rgba(253,246,240,0.72); /* era 0.5 -- molto piu leggibile */
+  --faint:  rgba(253,246,240,0.38); /* era 0.18 -- piu visibile */
   }
 
   html { scroll-behavior: smooth; scroll-padding-top: 80px; overflow-x: hidden; width: 100%; }
@@ -581,7 +590,7 @@
   }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a {
-    font-family: 'Outfit', sans-serif; font-weight: 300;
+    font-family: 'Outfit', sans-serif; font-weight: 700;
     color: var(--muted); text-decoration: none;
     font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase;
     transition: color 0.2s; padding: 0.4rem 0; min-height: 44px;
@@ -591,19 +600,19 @@
 
   /* ── HERO ── */
   #hero {
-    min-height: 100vh; position: relative; overflow: hidden;
-    display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 0 3.5rem 5rem; scroll-margin-top: 72px;
+    min-height: max(135vw, 100vh); position: relative; overflow: hidden;
+    display: flex; flex-direction: column; justify-content: flex-start;
+    padding: 8rem 3.5rem 0; scroll-margin-top: 72px;
   }
   .hero-bg {
     position: absolute; inset: 0;
-    background: url("img/29cfa87ae68d.jpg") center 20% / cover no-repeat;
+    background: url("img/marena-studio-hero.jpg") center center / contain no-repeat, var(--black);
     z-index: 0;
   }
   .hero-overlay {
     position: absolute; inset: 0;
     background: linear-gradient(105deg, rgba(19,8,16,0.48) 25%, rgba(19,8,16,0.0) 100%),
-                linear-gradient(to top, rgba(19,8,16,0.80) 0%, rgba(19,8,16,0.0) 48%);
+                linear-gradient(to bottom, rgba(19,8,16,0.80) 0%, rgba(19,8,16,0.0) 48%);
     z-index: 1;
   }
   .hero-content { position: relative; z-index: 2; max-width: 680px; }
@@ -612,11 +621,12 @@
     font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
     color: var(--acc2); margin-bottom: 1.2rem;
   }
-  .hero-name {
-    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
-    font-size: clamp(4.5rem, 10vw, 9rem);
-    line-height: 0.92; letter-spacing: -0.02em;
+    .hero-name {
+    font-family: 'Anton', sans-serif; font-style: normal; font-weight: 400;
+    font-size: clamp(6.5rem, 15vw, 14rem);
+    line-height: 1.15; letter-spacing: 0.01em; text-transform: uppercase;
     color: var(--white); margin-bottom: 1.4rem;
+    -webkit-text-stroke: 2.5px #a3e635; text-stroke: 2.5px #a3e635;
   }
   .hero-name span { display: block; }
   .hero-genres {
@@ -647,10 +657,10 @@
     font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
     color: var(--acc2); margin-bottom: 0.8rem; display: block;
   }
-  .sec-title-big {
-    font-family: 'Outfit', sans-serif; font-weight: 400;
-    font-size: clamp(3.5rem, 8vw, 7rem);
-    line-height: 0.9; letter-spacing: -0.02em;
+    .sec-title-big {
+    font-family: 'Anton', sans-serif; font-weight: 400;
+    font-size: clamp(3.2rem, 7vw, 6.5rem);
+    line-height: 0.92; letter-spacing: 0em;
     text-transform: uppercase; color: var(--white);
     margin-bottom: 3.5rem;
   }
@@ -833,6 +843,14 @@
     font-family: 'Outfit', sans-serif; font-weight: 200;
     font-size: 0.7rem; letter-spacing: 0.1em; color: var(--faint);
   }
+  .footer-right { display: flex; align-items: center; gap: 1.1rem; }
+  .footer-social { display: flex; align-items: center; gap: 0.4rem; }
+  .footer-social a {
+    color: var(--muted); display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; transition: color 0.2s;
+  }
+  .footer-social a:hover { color: var(--acc2); }
+  .footer-social svg { width: 17px; height: 17px; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 1024px) {
@@ -871,7 +889,7 @@
     .nav-name { font-size: 1rem; }
 
     section { padding: 3.5rem 1.2rem; }
-    #hero { padding: 0 1.2rem 3.5rem; min-height: 92vh; }
+    #hero { padding: 6rem 1.2rem 0; min-height: max(135vw, 100vh); }
     #contatti { padding: 0 1.2rem 3.5rem; min-height: 70vh; }
 
     .hero-name { font-size: clamp(3rem, 14vw, 5rem); }
@@ -1042,7 +1060,7 @@
 </head>
 <body>
 <nav>
-  <a href="index.html" class="nav-name" style="text-decoration:none;">Marena</a>
+  <a href="index.html" class="nav-name" style="text-decoration:none;" aria-label="Marena Orsini - Home">Home</a>
   <button class="burger" id="burger" aria-label="Apri menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -1063,20 +1081,11 @@
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content reveal">
-    <p class="hero-eyebrow">Marena · Cantante &amp; Pianista</p>
     <h1 class="hero-name">
       <span>Maria</span>
       <span>Elena</span>
       <span>Orsini</span>
     </h1>
-    <p class="hero-genres">
-      Blues · Jazz · Soul<br>
-      Musica Brasiliana · Afrobeat · Elettronica
-    </p>
-    <div class="hero-btns">
-      <a href="bio.html" class="btn btn-primary">Scopri Marena</a>
-      <a href="contatti.html" class="btn btn-outline">Contattami</a>
-    </div>
   </div>
 </section>
 
@@ -1084,8 +1093,24 @@
 </main>
 <footer>
   <span class="footer-name">Marena</span>
-  <img loading="lazy" src="img/2ea8c5c41b7b.png" alt="Menti Sonore" style="height:36px; opacity:0.75;">
-  <span class="footer-copy">© 2026 Maria Elena Orsini · Tutti i diritti riservati</span>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/mariaelenaorsini/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+    </a>
+    <a href="https://www.facebook.com/marenaorsini/?locale=it_IT" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 8.2h-1.6a1.7 1.7 0 0 0-1.7 1.7V12h3.1l-.4 3h-2.7v7h-3v-7H6.5v-3h2.2V9.6C8.7 7 10.4 5.4 13 5.4h2v2.8z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@marenaorsini8622" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="6" width="19" height="12" rx="3.5"/><path d="M10.3 9.6v4.8l4.2-2.4z" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="mailto:marena.orsini@gmail.com" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7.2l8 5.8 8-5.8"/></svg>
+    </a>
+  </div>
+  <div class="footer-right">
+    <img loading="lazy" src="img/2ea8c5c41b7b.png" alt="Menti Sonore" style="height:36px; opacity:0.75;">
+    <span class="footer-copy">© 2026 Maria Elena Orsini · Tutti i diritti riservati</span>
+  </div>
 </footer>
 <script>
 (function() {

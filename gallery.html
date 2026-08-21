@@ -11,23 +11,23 @@
 <meta name="theme-color" content="#0a0208">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>Marena – Maria Elena Orsini</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300;1,9..144,700&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300;1,9..144,700&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300;1,9..144,700&family=Outfit:wght@200;300;400&display=swap&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300;1,9..144,700&family=Outfit:wght@200;300;400&display=swap&display=swap');
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --black:  #130810;       /* era #0a0208 — leggermente più chiaro */
-    --off:    #221428;       /* era #1a0d17 — più chiaro */
-    --surf:   #2e1a30;       /* era #220f1e — più chiaro */
-    --border: rgba(240,63,160,0.22);  /* era 0.12 — bordi più visibili */
-    --acc:    #e0307f;       /* leggermente più luminoso */
-    --acc2:   #ff55b0;       /* era #f03fa0 — più brillante */
-    --dim:    rgba(212,36,122,0.2);
-    --white:  #fdf6f0;       /* era #f0e8e0 — quasi bianco puro */
-    --muted:  rgba(253,246,240,0.72); /* era 0.5 — molto più leggibile */
-    --faint:  rgba(253,246,240,0.38); /* era 0.18 — più visibile */
+  --black:  #130810;       /* era #0a0208 -- leggermente piu chiaro */
+  --off:    #221428;       /* era #1a0d17 -- piu chiaro */
+  --surf:   #2e1a30;       /* era #220f1e -- piu chiaro */
+  --border: rgba(240,63,160,0.22);  /* era 0.12 -- bordi piu visibili */
+  --acc:    #e0307f;       /* leggermente piu luminoso */
+  --acc2:   #ff55b0;       /* era #f03fa0 -- piu brillante */
+  --dim:    rgba(212,36,122,0.2);
+  --white:  #fdf6f0;       /* era #f0e8e0 -- quasi bianco puro */
+  --muted:  rgba(253,246,240,0.72); /* era 0.5 -- molto piu leggibile */
+  --faint:  rgba(253,246,240,0.38); /* era 0.18 -- piu visibile */
   }
 
   html { scroll-behavior: smooth; scroll-padding-top: 80px; overflow-x: hidden; width: 100%; }
@@ -60,7 +60,7 @@
   }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a {
-    font-family: 'Outfit', sans-serif; font-weight: 300;
+    font-family: 'Outfit', sans-serif; font-weight: 700;
     color: var(--muted); text-decoration: none;
     font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase;
     transition: color 0.2s; padding: 0.4rem 0; min-height: 44px;
@@ -92,9 +92,9 @@
     color: var(--acc2); margin-bottom: 1.2rem;
   }
   .hero-name {
-    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
-    font-size: clamp(4.5rem, 10vw, 9rem);
-    line-height: 0.92; letter-spacing: -0.02em;
+    font-family: 'Anton', sans-serif; font-style: normal; font-weight: 400;
+    font-size: clamp(4rem, 9vw, 8rem);
+    line-height: 0.88; letter-spacing: 0.01em; text-transform: uppercase;
     color: var(--white); margin-bottom: 1.4rem;
   }
   .hero-name span { display: block; }
@@ -127,11 +127,12 @@
     color: var(--acc2); margin-bottom: 0.8rem; display: block;
   }
   .sec-title-big {
-    font-family: 'Outfit', sans-serif; font-weight: 400;
-    font-size: clamp(3.5rem, 8vw, 7rem);
-    line-height: 0.9; letter-spacing: -0.02em;
+    font-family: 'Anton', sans-serif; font-weight: 400;
+    font-size: clamp(5.6rem, 12.25vw, 11.4rem);
+    line-height: 0.9; letter-spacing: 0em;
     text-transform: uppercase; color: var(--white);
     margin-bottom: 3.5rem;
+    -webkit-text-stroke: 2px #a3e635; text-stroke: 2px #a3e635;
   }
   .sec-title {
     font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
@@ -312,6 +313,14 @@
     font-family: 'Outfit', sans-serif; font-weight: 200;
     font-size: 0.7rem; letter-spacing: 0.1em; color: var(--faint);
   }
+  .footer-right { display: flex; align-items: center; gap: 1.1rem; }
+  .footer-social { display: flex; align-items: center; gap: 0.4rem; }
+  .footer-social a {
+    color: var(--muted); display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; transition: color 0.2s;
+  }
+  .footer-social a:hover { color: var(--acc2); }
+  .footer-social svg { width: 17px; height: 17px; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 1024px) {
@@ -514,31 +523,6 @@
   }
 
 
-  /* ── LOCANDINE (intere, non tagliate) ── */
-  .locandine-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 2.5rem;
-    align-items: start;
-  }
-  .loc-card { display: flex; flex-direction: column; }
-  .loc-img {
-    width: 100%;
-    background: var(--surf);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .loc-img img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
-  }
-  .loc-meta { padding: 1rem 0 0; }
   /* Gallery foto: thumb uniforme */
   .g-thumb { overflow: hidden; aspect-ratio: 4/3; border-radius: 4px; }
   .g-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
@@ -565,21 +549,21 @@
 
 <title>Marena – Gallery</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300;1,9..144,700&family=Outfit:wght@200;300;400&display=swap&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300;1,9..144,700&family=Outfit:wght@200;300;400&display=swap&display=swap');
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --black:  #130810;       /* era #0a0208 — leggermente più chiaro */
-    --off:    #221428;       /* era #1a0d17 — più chiaro */
-    --surf:   #2e1a30;       /* era #220f1e — più chiaro */
-    --border: rgba(240,63,160,0.22);  /* era 0.12 — bordi più visibili */
-    --acc:    #e0307f;       /* leggermente più luminoso */
-    --acc2:   #ff55b0;       /* era #f03fa0 — più brillante */
-    --dim:    rgba(212,36,122,0.2);
-    --white:  #fdf6f0;       /* era #f0e8e0 — quasi bianco puro */
-    --muted:  rgba(253,246,240,0.72); /* era 0.5 — molto più leggibile */
-    --faint:  rgba(253,246,240,0.38); /* era 0.18 — più visibile */
+  --black:  #130810;       /* era #0a0208 -- leggermente piu chiaro */
+  --off:    #221428;       /* era #1a0d17 -- piu chiaro */
+  --surf:   #2e1a30;       /* era #220f1e -- piu chiaro */
+  --border: rgba(240,63,160,0.22);  /* era 0.12 -- bordi piu visibili */
+  --acc:    #e0307f;       /* leggermente piu luminoso */
+  --acc2:   #ff55b0;       /* era #f03fa0 -- piu brillante */
+  --dim:    rgba(212,36,122,0.2);
+  --white:  #fdf6f0;       /* era #f0e8e0 -- quasi bianco puro */
+  --muted:  rgba(253,246,240,0.72); /* era 0.5 -- molto piu leggibile */
+  --faint:  rgba(253,246,240,0.38); /* era 0.18 -- piu visibile */
   }
 
   html { scroll-behavior: smooth; scroll-padding-top: 80px; overflow-x: hidden; width: 100%; }
@@ -612,7 +596,7 @@
   }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a {
-    font-family: 'Outfit', sans-serif; font-weight: 300;
+    font-family: 'Outfit', sans-serif; font-weight: 700;
     color: var(--muted); text-decoration: none;
     font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase;
     transition: color 0.2s; padding: 0.4rem 0; min-height: 44px;
@@ -644,9 +628,9 @@
     color: var(--acc2); margin-bottom: 1.2rem;
   }
   .hero-name {
-    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
-    font-size: clamp(4.5rem, 10vw, 9rem);
-    line-height: 0.92; letter-spacing: -0.02em;
+    font-family: 'Anton', sans-serif; font-style: normal; font-weight: 400;
+    font-size: clamp(4rem, 9vw, 8rem);
+    line-height: 0.88; letter-spacing: 0.01em; text-transform: uppercase;
     color: var(--white); margin-bottom: 1.4rem;
   }
   .hero-name span { display: block; }
@@ -679,11 +663,12 @@
     color: var(--acc2); margin-bottom: 0.8rem; display: block;
   }
   .sec-title-big {
-    font-family: 'Outfit', sans-serif; font-weight: 400;
-    font-size: clamp(3.5rem, 8vw, 7rem);
-    line-height: 0.9; letter-spacing: -0.02em;
+    font-family: 'Anton', sans-serif; font-weight: 400;
+    font-size: clamp(5.6rem, 12.25vw, 11.4rem);
+    line-height: 0.9; letter-spacing: 0em;
     text-transform: uppercase; color: var(--white);
     margin-bottom: 3.5rem;
+    -webkit-text-stroke: 2px #a3e635; text-stroke: 2px #a3e635;
   }
   .sec-title {
     font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
@@ -864,6 +849,14 @@
     font-family: 'Outfit', sans-serif; font-weight: 200;
     font-size: 0.7rem; letter-spacing: 0.1em; color: var(--faint);
   }
+  .footer-right { display: flex; align-items: center; gap: 1.1rem; }
+  .footer-social { display: flex; align-items: center; gap: 0.4rem; }
+  .footer-social a {
+    color: var(--muted); display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; transition: color 0.2s;
+  }
+  .footer-social a:hover { color: var(--acc2); }
+  .footer-social svg { width: 17px; height: 17px; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 1024px) {
@@ -1070,31 +1063,6 @@
   body.page main { padding-top: 65px; }
   .page-hero-spacer { height: 0; }
 
-  /* ── LOCANDINE (intere, non tagliate) ── */
-  .locandine-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 2.5rem;
-    align-items: start;
-  }
-  .loc-card { display: flex; flex-direction: column; }
-  .loc-img {
-    width: 100%;
-    background: var(--surf);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .loc-img img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
-  }
-  .loc-meta { padding: 1rem 0 0; }
   /* Gallery foto: thumb uniforme */
   .g-thumb { overflow: hidden; aspect-ratio: 4/3; border-radius: 4px; }
   .g-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
@@ -1104,7 +1072,7 @@
 </head>
 <body class="page">
 <nav>
-  <a href="index.html" class="nav-name" style="text-decoration:none;">Marena</a>
+  <a href="index.html" class="nav-name" style="text-decoration:none;">Home</a>
   <button class="burger" id="burger" aria-label="Apri menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -1165,59 +1133,31 @@
     </div>
   </div>
 
-  <div class="reveal" style="margin: 4rem 0 1.5rem;">
-    <span class="sec-label" style="color:var(--muted);">Locandine &amp; Eventi</span>
-  </div>
-  <div class="locandine-grid reveal">
-    <div class="loc-card">
-      <div class="loc-img"><img src="img/c4762b957371.jpg" alt="Notas Libres"></div>
-      <div class="loc-meta">
-        <span class="g-card-year">29 Agosto 2025 · Capistrello</span>
-        <div class="g-card-title">Notas Libres</div>
-        <p class="g-card-desc">Piazza Risorgimento, ore 21.30. Con Juan Carlos Albelo Zamora e Natalio Mangalavite.</p>
-      </div>
-    </div>
-    <div class="loc-card">
-      <div class="loc-img"><img src="img/60a04e319111.jpg" alt="Castello Orsini"></div>
-      <div class="loc-meta">
-        <span class="g-card-year">8 Gennaio 2026 · Avezzano</span>
-        <div class="g-card-title">Castello Orsini</div>
-        <p class="g-card-desc">Concerto "Notas Libres" al Castello Orsini, ore 21.00. Ingresso offerta libera.</p>
-      </div>
-    </div>
-    <div class="loc-card">
-      <div class="loc-img"><img src="img/c1aab9c3e404.jpg" alt="Note in Bianco &amp; Nero"></div>
-      <div class="loc-meta">
-        <span class="g-card-year">4 Gennaio 2018 · Castello Orsini</span>
-        <div class="g-card-title">Note in Bianco &amp; Nero</div>
-        <p class="g-card-desc">Con Fabrizio Bosso (tromba), Sadé Mangiaracina (piano), Alessandro Marzi (batteria).</p>
-      </div>
-    </div>
-    <div class="loc-card">
-      <div class="loc-img"><img src="img/c12acd7ee04b.jpg" alt="Note d'Insieme"></div>
-      <div class="loc-meta">
-        <span class="g-card-year">2 Luglio 2022 · Avezzano</span>
-        <div class="g-card-title">Note d'Insieme</div>
-        <p class="g-card-desc">L'Aia dei Musei. Con João Tavares Filho (piano) e Javier Girotto (sax &amp; fiati).</p>
-      </div>
-    </div>
-    <div class="loc-card">
-      <div class="loc-img"><img src="img/d3f47854f1c0.jpg" alt="Maria João — Ogre Electric Trio"></div>
-      <div class="loc-meta">
-        <span class="g-card-year">26 Ottobre 2018 · Sulmona</span>
-        <div class="g-card-title">Maria João — Ogre Electric Trio</div>
-        <p class="g-card-desc">Teatro Comunale M. Caniglia. Con la partecipazione di Marena Orsini.</p>
-      </div>
-    </div>
-  </div>
+
 </section>
 
 
 </main>
 <footer>
   <span class="footer-name">Marena</span>
-  <img loading="lazy" src="img/2ea8c5c41b7b.png" alt="Menti Sonore" style="height:36px; opacity:0.75;">
-  <span class="footer-copy">© 2026 Maria Elena Orsini · Tutti i diritti riservati</span>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/mariaelenaorsini/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+    </a>
+    <a href="https://www.facebook.com/marenaorsini/?locale=it_IT" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 8.2h-1.6a1.7 1.7 0 0 0-1.7 1.7V12h3.1l-.4 3h-2.7v7h-3v-7H6.5v-3h2.2V9.6C8.7 7 10.4 5.4 13 5.4h2v2.8z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@marenaorsini8622" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="6" width="19" height="12" rx="3.5"/><path d="M10.3 9.6v4.8l4.2-2.4z" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="mailto:marena.orsini@gmail.com" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7.2l8 5.8 8-5.8"/></svg>
+    </a>
+  </div>
+  <div class="footer-right">
+    <img loading="lazy" src="img/2ea8c5c41b7b.png" alt="Menti Sonore" style="height:36px; opacity:0.75;">
+    <span class="footer-copy">© 2026 Maria Elena Orsini · Tutti i diritti riservati</span>
+  </div>
 </footer>
 <script>
 (function() {
