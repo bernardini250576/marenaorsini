@@ -76,20 +76,31 @@
   }
   .nav-name {
     font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase;
-    font-size: 1.9rem; line-height: 0.9; color: var(--white); letter-spacing: 0.02em;
-    -webkit-text-stroke: 1px var(--acc2); text-stroke: 1px var(--acc2);
-    max-width: 42%;
+    font-size: 6.5rem; line-height: 1; color: var(--white); letter-spacing: 0.02em;
+    -webkit-text-stroke: 1.5px var(--acc2); text-stroke: 1.5px var(--acc2);
+    white-space: nowrap;
   }
-  .nav-name span { display: inline; }
   .nav-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1rem; }
-  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+  .nav-links {
+    position: fixed; top: 0; right: -100%;
+    width: 75vw; max-width: 320px; height: 100vh;
+    background: rgba(19,8,16,0.98); backdrop-filter: blur(20px);
+    display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+    gap: 0; list-style: none; padding: 5rem 2.5rem 2.5rem;
+    transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+    border-left: 1px solid var(--border); z-index: 1001;
+  }
+  .nav-links.open { right: 0; }
+  .nav-links li { width: 100%; }
   .nav-links a {
     font-family: 'Outfit', sans-serif; font-weight: 700;
-    color: var(--muted); text-decoration: none;
-    font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
-    transition: color 0.2s; padding: 0.4rem 0; min-height: 44px;
-    display: flex; align-items: center;
+    color: var(--white); text-decoration: none;
+    font-size: 1.15rem; letter-spacing: 0.1em; text-transform: uppercase;
+    transition: color 0.2s; padding: 1.1rem 0; width: 100%;
+    display: block; border-bottom: 0.5px solid var(--border); opacity: 0.85;
+    position: relative; z-index: 251;
   }
+  .nav-links li:last-child a { border-bottom: none; }
   .nav-links a:hover { color: var(--white); }
 
   /* ── HERO ── */
@@ -478,7 +489,7 @@
 
   /* ── BURGER MENU ── */
   .burger {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
@@ -552,12 +563,44 @@
   /* Multipagina: padding per nav fissa */
   body.page main { padding-top: 65px; }
   .page-hero-spacer { height: 0; }
+
+  .nav-album {
+    font-family: 'Outfit', sans-serif; font-weight: 400;
+    font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase;
+    color: #1ed760; text-decoration: none; margin-bottom: 0.3rem;
+    transition: color 0.2s;
+  }
+  .nav-album:hover { color: #1DB954; }
+  @media (max-width: 1024px) {
+    .nav-album { font-size: 0.6rem; margin-bottom: 0.4rem; }
+  }
+
+  .album-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3.5rem; align-items: start; }
+  .album-cover-link {
+    position: relative; display: block; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5); transition: transform 0.3s ease;
+    aspect-ratio: 1/1;
+  }
+  .album-cover-link img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .album-cover-link:hover { transform: translateY(-4px); }
+  .album-cover-link:hover img { transform: scale(1.04); }
+  .album-cover-play {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-size: 3.5rem; color: #fff; background: rgba(29,185,84,0);
+    transition: background 0.3s ease; opacity: 0;
+  }
+  .album-cover-link:hover .album-cover-play { opacity: 1; background: rgba(29,185,84,0.25); }
+  @media (max-width: 1024px) {
+    .album-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .album-cover-link { max-width: 320px; margin: 0 auto; }
+  }
 </style>
 </head>
 <body>
 <nav>
   <a href="index.html" class="nav-name" style="text-decoration:none;" aria-label="Marena Orsini - Home"><span>Maria</span> <span>Elena</span> <span>Orsini</span></a>
   <div class="nav-right">
+    <a href="https://open.spotify.com/intl-it/album/6T1UB6mLHLskpHPDdaUvbK" target="_blank" rel="noopener noreferrer" class="nav-album">● Encontrar-se · nuovo album ↗</a>
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html" style="color:var(--acc2);opacity:1;">Home</a></li>
       <li><a href="bio.html">Bio</a></li>
@@ -590,17 +633,18 @@
 
 <section id="album" style="background: var(--off);">
   <div class="reveal">
-    <span class="sec-label">Fuori Ora</span>
-    <h2 class="sec-title-big" style="-webkit-text-stroke:2px #1DB954;text-stroke:2px #1DB954;">Encontrar-se</h2>
+    <span class="sec-label" style="color:#1ed760;">Fuori Ora · Nuovo Album</span>
   </div>
-  <div class="reveal" style="display:grid; grid-template-columns: 1fr 1.25fr; gap: 3rem; align-items:center;">
-    <div>
+  <div class="reveal album-grid">
+    <a href="https://open.spotify.com/intl-it/album/6T1UB6mLHLskpHPDdaUvbK" target="_blank" rel="noopener noreferrer" class="album-cover-link" aria-label="Ascolta Encontrar-se su Spotify">
+      <img src="img/single-encontrarse.jpg" alt="Copertina album Encontrar-se" loading="lazy">
+      <span class="album-cover-play">▶</span>
+    </a>
+    <div class="album-text">
       <p style="font-size:0.85rem;color:#1ed760;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.2rem;">Marena Orsini · Nuovo Album</p>
-      <p style="font-size:1rem;color:var(--white);opacity:0.82;line-height:1.85;margin-bottom:2rem;">Il nuovo lavoro discografico di Marena: un viaggio tra sonorità brasiliane, jazz e world music. Ascoltalo qui o su tutte le piattaforme.</p>
-      <a href="https://open.spotify.com/intl-it/album/6T1UB6mLHLskpHPDdaUvbK" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#1DB954;">Apri su Spotify ↗</a>
-    </div>
-    <div>
-      <iframe style="border-radius:12px;" src="https://open.spotify.com/embed/album/6T1UB6mLHLskpHPDdaUvbK?utm_source=generator&theme=0" width="100%" height="420" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <p style="font-size:1rem;color:var(--white);opacity:0.82;line-height:1.85;margin-bottom:1.8rem;">Il nuovo lavoro discografico di Marena: un viaggio tra sonorità brasiliane, jazz e world music. Clicca la copertina per ascoltarlo o apri Spotify.</p>
+      <a href="https://open.spotify.com/intl-it/album/6T1UB6mLHLskpHPDdaUvbK" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#1DB954;margin-bottom:1.5rem;">Apri su Spotify ↗</a>
+      <iframe style="border-radius:12px;margin-top:0.5rem;" src="https://open.spotify.com/embed/album/6T1UB6mLHLskpHPDdaUvbK?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
   </div>
 </section>

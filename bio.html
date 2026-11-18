@@ -82,14 +82,26 @@
   }
   .nav-name span { display: inline; }
   .nav-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1rem; }
-  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+  .nav-links {
+    position: fixed; top: 0; right: -100%;
+    width: 75vw; max-width: 320px; height: 100vh;
+    background: rgba(19,8,16,0.98); backdrop-filter: blur(20px);
+    display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+    gap: 0; list-style: none; padding: 5rem 2.5rem 2.5rem;
+    transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+    border-left: 1px solid var(--border); z-index: 1001;
+  }
+  .nav-links.open { right: 0; }
+  .nav-links li { width: 100%; }
   .nav-links a {
     font-family: 'Outfit', sans-serif; font-weight: 700;
-    color: var(--muted); text-decoration: none;
-    font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
-    transition: color 0.2s; padding: 0.4rem 0; min-height: 44px;
-    display: flex; align-items: center;
+    color: var(--white); text-decoration: none;
+    font-size: 1.15rem; letter-spacing: 0.1em; text-transform: uppercase;
+    transition: color 0.2s; padding: 1.1rem 0; width: 100%;
+    display: block; border-bottom: 0.5px solid var(--border); opacity: 0.85;
+    position: relative; z-index: 251;
   }
+  .nav-links li:last-child a { border-bottom: none; }
   .nav-links a:hover { color: var(--white); }
 
   /* ── HERO ── */
@@ -497,7 +509,7 @@
 
   /* ── BURGER MENU ── */
   .burger {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
