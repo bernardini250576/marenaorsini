@@ -76,10 +76,11 @@
   }
   .nav-name {
     font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase;
-    font-size: 6.5rem; line-height: 1; color: var(--white); letter-spacing: 0.02em;
-    -webkit-text-stroke: 1.5px var(--acc2); text-stroke: 1.5px var(--acc2);
-    white-space: nowrap;
+    font-size: 1.9rem; line-height: 0.9; color: var(--white); letter-spacing: 0.02em;
+    -webkit-text-stroke: 1px var(--acc2); text-stroke: 1px var(--acc2);
+    max-width: 42%;
   }
+  .nav-name span { display: inline; }
   .nav-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1rem; }
   .nav-links { display: flex; gap: 1.5rem; list-style: none; }
   .nav-links a {
@@ -349,6 +350,7 @@
     .bio-wrap, .generi-wrap, .bg-wrap, .form-wrap { grid-template-columns: 1fr; }
     .bio-vline, .bg-vline, .form-vline { display: none; }
     .gallery-grid { grid-template-columns: 1fr; }
+    #album > .reveal:last-child { grid-template-columns: 1fr !important; gap: 2rem !important; }
     .collab-grid { grid-template-columns: 1fr; }
     hr.div { margin: 0 1.5rem; }
     footer { flex-direction: column; gap: 0.5rem; padding: 1.5rem; text-align: center; }
@@ -584,6 +586,23 @@
       <span class="single-cta">Ascolta su Spotify ↗</span>
     </div>
   </a>
+</section>
+
+<section id="album" style="background: var(--off);">
+  <div class="reveal">
+    <span class="sec-label">Fuori Ora</span>
+    <h2 class="sec-title-big" style="-webkit-text-stroke:2px #1DB954;text-stroke:2px #1DB954;">Encontrar-se</h2>
+  </div>
+  <div class="reveal" style="display:grid; grid-template-columns: 1fr 1.25fr; gap: 3rem; align-items:center;">
+    <div>
+      <p style="font-size:0.85rem;color:#1ed760;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.2rem;">Marena Orsini · Nuovo Album</p>
+      <p style="font-size:1rem;color:var(--white);opacity:0.82;line-height:1.85;margin-bottom:2rem;">Il nuovo lavoro discografico di Marena: un viaggio tra sonorità brasiliane, jazz e world music. Ascoltalo qui o su tutte le piattaforme.</p>
+      <a href="https://open.spotify.com/intl-it/album/6T1UB6mLHLskpHPDdaUvbK" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#1DB954;">Apri su Spotify ↗</a>
+    </div>
+    <div>
+      <iframe style="border-radius:12px;" src="https://open.spotify.com/embed/album/6T1UB6mLHLskpHPDdaUvbK?utm_source=generator&theme=0" width="100%" height="420" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+  </div>
 </section>
 
 
